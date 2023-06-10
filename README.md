@@ -218,7 +218,6 @@
 
 주어진 UML에 충실하기 위해서 고민을 많이 했다.
 - `Operator`의 메서드
-<img src = "https://github.com/yagom-academy/ios-calculator-app/assets/124643545/e8f4c68e-d9f8-4aa0-bc2e-bb909cf18cb8" width = "400"> <br>
     - `enum`의 `case`들은 접근할 수 있어야 하므로 상대적으로 `+`를 개방으로 `-`를 폐쇄로 생각하고 진행
     - 같은 맥락으로 메서드들 중 `calculate`만 개방으로, 나머지 연산 메서드들은 `private func`로 구현
     - 열거형에 대한 공부를 하던 중 'Enum은 switch문과 같이 사용할 때 강력하다'라는 내용을 보고 '아, 그래서 `calculate`만 개방이구나!!'' 하고 깨달아서 `switch` 문으로 메서드 내용을 구현
