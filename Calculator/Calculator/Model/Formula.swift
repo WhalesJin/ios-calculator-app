@@ -10,9 +10,11 @@ struct Formula {
     var operators: CalculatorItemQueue<Operator>
     
     mutating func result() throws -> Double {
-        if operands.isEmpty {
+        guard !operands.isEmpty else {
             return 0
-        } else if operators.isEmpty, let result = operands.readFirstData() {
+        }
+        
+        if operators.isEmpty, let result = operands.readFirstData() {
             return result
         }
         

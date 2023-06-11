@@ -8,7 +8,7 @@
 import UIKit
 
 struct CalculatorItemQueue<Element: CalculateItem>: Queueable {
-    var queue: LinkedList = LinkedList<Element>()
+    private(set) var queue: LinkedList = LinkedList<Element>()
     
     var count: Int {
         return queue.count
@@ -18,12 +18,20 @@ struct CalculatorItemQueue<Element: CalculateItem>: Queueable {
         return queue.isEmpty
     }
     
+    var firstData: Element? {
+        return queue.headData
+    }
+    
+    var lastData: Element? {
+        return queue.tailData
+    }
+    
     mutating func enqueue(_ element: Element) {
         queue.append(data: element)
     }
     
     mutating func dequeue() throws -> Element {
-        guard let data = queue.readHeadData() else {
+        guard let data = queue.headData else {
             throw CalculatorError.invalidData
         }
         queue.removeFirst()
@@ -32,13 +40,5 @@ struct CalculatorItemQueue<Element: CalculateItem>: Queueable {
     
     mutating func clearQueue() {
         queue.removeAll()
-    }
-    
-    func readFirstData() -> Element? {
-        return queue.readHeadData()
-    }
-    
-    func readLastData() -> Element? {
-        return queue.readTailData()
     }
 }

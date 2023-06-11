@@ -24,12 +24,12 @@ struct LinkedList<T> {
         head == nil
     }
     
-    func readHeadData() -> T? {
-        return head?.data
+    var headData: T? {
+        head?.data
     }
     
-    func readTailData() -> T? {
-        return tail?.data
+    var tailData: T? {
+        tail?.data
     }
     
     mutating func append(data: T) {
