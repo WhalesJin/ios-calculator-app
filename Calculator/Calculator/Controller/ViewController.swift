@@ -19,17 +19,25 @@ class ViewController: UIViewController {
     @IBOutlet weak var eightButton: UIButton!
     @IBOutlet weak var nineButton: UIButton!
     @IBOutlet weak var doubleZeroButton: UIButton!
+    @IBOutlet weak var dotButton: UIButton!
+    
+    @IBOutlet weak var divideButton: UIButton!
+    @IBOutlet weak var multiplyButton: UIButton!
+    @IBOutlet weak var subtractButton: UIButton!
+    @IBOutlet weak var addButton: UIButton!
     
     @IBOutlet weak var signButton: UIButton!
     @IBOutlet weak var opratorLabel: UILabel!
     @IBOutlet weak var nextValueLabel: UILabel!
+    @IBOutlet weak var nextOperatorLabel: UILabel!
     
-    
-    
+    var touchedNumber: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        opratorLabel.text = ""
+        nextValueLabel.text = ""
     }
 
     @IBAction func didTapACButton(_ sender: UIButton) {
@@ -41,36 +49,58 @@ class ViewController: UIViewController {
     }
     
     @IBAction func didTapNumberButton(_ sender: UIButton) {
-        let touchedNumber: String
+        let number: String
         
         switch sender {
         case zeroButton:
-            touchedNumber = "0"
+            number = "0"
         case oneButton:
-            touchedNumber = "1"
+            number = "1"
         case twoButton:
-            touchedNumber = "2"
+            number = "2"
         case threeButton:
-            touchedNumber = "3"
+            number = "3"
         case fourButton:
-            touchedNumber = "4"
+            number = "4"
         case fiveButton:
-            touchedNumber = "5"
+            number = "5"
         case sixButton:
-            touchedNumber = "6"
+            number = "6"
         case sevenButton:
-            touchedNumber = "7"
+            number = "7"
         case eightButton:
-            touchedNumber = "8"
+            number = "8"
         case nineButton:
-            touchedNumber = "9"
+            number = "9"
         case doubleZeroButton:
-            touchedNumber = "00"
+            number = "00"
+        case dotButton:
+            number = "."
         default:
             return
         }
         
+        touchedNumber += number
         nextValueLabel.text = touchedNumber
+    }
+    
+    @IBAction func didTapOperatorButton(_ sender: UIButton) {
+        let `operator`: String
+        
+        switch sender {
+        case addButton:
+            `operator` = "+"
+        case subtractButton:
+            `operator` = "−"
+        case divideButton:
+            `operator` = "÷"
+        case multiplyButton:
+            `operator` = "×"
+        default:
+            return
+        }
+        
+        nextOperatorLabel.text = `operator`
     }
 }
 

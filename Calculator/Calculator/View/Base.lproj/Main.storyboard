@@ -115,6 +115,9 @@
                                                 <state key="normal" title="÷">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="didTapOperatorButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vY6-rL-b9D"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -161,6 +164,9 @@
                                                 <state key="normal" title="×">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="didTapOperatorButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="y4F-VB-3gO"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -207,6 +213,9 @@
                                                 <state key="normal" title="−">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="didTapOperatorButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xHS-Ot-hEO"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -253,6 +262,9 @@
                                                 <state key="normal" title="+">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="didTapOperatorButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="X1x-ms-DLx"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -288,6 +300,9 @@
                                                 <state key="normal" title=".">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="didTapNumberButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bQi-mL-Gkd"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Daw-iX-Owl">
                                                 <rect key="frame" x="292.5" y="0.0" width="89.5" height="89.5"/>
@@ -343,10 +358,15 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="addButton" destination="sbh-wC-koF" id="GkD-Pk-YAp"/>
+                        <outlet property="divideButton" destination="Tfz-eM-jll" id="75X-Z0-bNX"/>
+                        <outlet property="dotButton" destination="h8q-5h-bnb" id="p5j-eT-wBj"/>
                         <outlet property="doubleZeroButton" destination="sH6-8l-kje" id="bWG-nO-iWd"/>
                         <outlet property="eightButton" destination="xgT-2D-A49" id="vVh-ny-6ff"/>
                         <outlet property="fiveButton" destination="vpW-df-OLm" id="xXT-8Q-fAM"/>
                         <outlet property="fourButton" destination="hQm-yz-XvG" id="j9x-Gg-Kkx"/>
+                        <outlet property="multiplyButton" destination="811-Pz-An6" id="duo-1g-9Tv"/>
+                        <outlet property="nextOperatorLabel" destination="HPC-iy-qdm" id="Cjy-H9-uYN"/>
                         <outlet property="nextValueLabel" destination="Lwz-OF-XHD" id="e7L-GX-Wge"/>
                         <outlet property="nineButton" destination="zcj-xJ-ruw" id="qsF-qq-2fM"/>
                         <outlet property="oneButton" destination="nCE-qB-NiN" id="Oxy-UI-gM6"/>
@@ -354,6 +374,7 @@
                         <outlet property="sevenButton" destination="L6z-2G-Gar" id="vUg-Ok-jf2"/>
                         <outlet property="signButton" destination="ows-U7-mNc" id="Hhc-sD-fhV"/>
                         <outlet property="sixButton" destination="OaY-Mw-CPv" id="DWH-tS-i6j"/>
+                        <outlet property="subtractButton" destination="sbh-wC-koF" id="a7i-af-7ud"/>
                         <outlet property="threeButton" destination="X8H-iH-tSd" id="x11-LI-V8T"/>
                         <outlet property="twoButton" destination="Rif-2S-UU2" id="tr2-zf-fNe"/>
                         <outlet property="zeroButton" destination="mSz-Y3-r5Z" id="KM3-D6-4tF"/>

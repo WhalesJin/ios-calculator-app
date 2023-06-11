@@ -91,7 +91,7 @@ struct LinkedList<T> {
             count -= 1
         }
         
-        return tailData
+        return data
     }
     
     mutating func removeLast() {
