@@ -32,7 +32,7 @@ struct CalculatorItemQueue<Element: CalculateItem>: Queueable {
     
     @discardableResult
     mutating func dequeue() -> Element? {
-        queue.removeFirst() as? Element
+        queue.removeFirst()
     }
     
     mutating func clearQueue() {
