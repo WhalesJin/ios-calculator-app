@@ -13,9 +13,10 @@ enum ExpressionParser {
         var operators: CalculatorItemQueue<Operator> = CalculatorItemQueue()
         
         let components = componentsByOperators(from: input)
+        let operatorList = Operator.allCases.map { String($0.rawValue) }
         
         components
-            .filter { ["+", "-", "/", "*"].contains($0) }
+            .filter { operatorList.contains($0) }
             .compactMap { Operator(rawValue: Character($0)) }
             .forEach { operators.enqueue($0) }
         

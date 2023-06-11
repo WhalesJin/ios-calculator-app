@@ -35,7 +35,7 @@ enum Operator: Character, CaseIterable, CalculateItem {
     private func divide(lhs: Double, rhs: Double) -> Double {
         let result = lhs / rhs
         
-        return result.isInfinite? .nan : result
+        return result.isInfinite ? .nan : result
     }
     
     private func multiply(lhs: Double, rhs: Double) -> Double {
