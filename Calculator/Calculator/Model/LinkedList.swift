@@ -74,20 +74,24 @@ struct LinkedList<T> {
         count += 1
     }
     
-    mutating func removeFirst() {
+    @discardableResult
+    mutating func removeFirst() -> T? {
         guard !isEmpty else {
-            return
+            return nil
         }
+        
+        let data = head?.data
         
         if count == 1 {
             head = nil
             tail = nil
             count = 0
-            return
+        } else {
+            head = head?.next
+            count -= 1
         }
         
-        head = head?.next
-        count -= 1
+        return tailData
     }
     
     mutating func removeLast() {

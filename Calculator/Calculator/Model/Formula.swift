@@ -10,20 +10,10 @@ struct Formula {
     var operators: CalculatorItemQueue<Operator>
     
     mutating func result() throws -> Double {
-        guard !operands.isEmpty else {
-            return 0
-        }
-        
-        if operators.isEmpty, let result = operands.readFirstData() {
-            return result
-        }
-        
-        var result: Double = try operands.dequeue()
-        
-        result = try operators.dequeue().calculate(lhs: result, rhs: try operands.dequeue())
-        
-        while !operands.isEmpty {
-            result = try operators.dequeue().calculate(lhs: result, rhs: try operands.dequeue())
+        guard var result = operands.dequeue() else { return 0 }
+        while let `operator` = operators.dequeue(),
+              let operand = operands.dequeue() {
+            result = `operator`.calculate(lhs: result, rhs: operand)
         }
         
         return result
