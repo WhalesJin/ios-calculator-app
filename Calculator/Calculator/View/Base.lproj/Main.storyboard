@@ -280,6 +280,7 @@
                                                 </state>
                                                 <connections>
                                                     <action selector="didTapNumberButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="m99-D6-HnI"/>
+                                                    <action selector="didTapZeroButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CZB-ab-hZJ"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sH6-8l-kje">
@@ -314,6 +315,9 @@
                                                 <state key="normal" title="=">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="didTapEqualButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QKX-7q-52d"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -358,10 +362,14 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="firstNumberLabel" destination="oGo-LN-bKL" id="oiU-UJ-CD4"/>
+                        <outlet property="firstOperatorLabel" destination="c7v-6K-W40" id="Z63-Sg-cXr"/>
                         <outlet property="nextOperatorLabel" destination="HPC-iy-qdm" id="Cjy-H9-uYN"/>
                         <outlet property="nextValueLabel" destination="Lwz-OF-XHD" id="e7L-GX-Wge"/>
-                        <outlet property="opratorLabel" destination="HPC-iy-qdm" id="qDu-m4-sww"/>
+                        <outlet property="secondNumberLabel" destination="Hcb-r0-27f" id="2zu-Ie-dwG"/>
+                        <outlet property="secondOperatorLabel" destination="alw-Zd-2pT" id="42o-iO-vy2"/>
                         <outlet property="signButton" destination="ows-U7-mNc" id="Hhc-sD-fhV"/>
+                        <outlet property="statusStackView" destination="XRe-QE-UJf" id="zUO-Bf-q18"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
