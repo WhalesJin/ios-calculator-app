@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Calculator View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Calculator" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="CalculatorViewController" customModule="Calculator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -358,26 +358,10 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="addButton" destination="sbh-wC-koF" id="GkD-Pk-YAp"/>
-                        <outlet property="divideButton" destination="Tfz-eM-jll" id="75X-Z0-bNX"/>
-                        <outlet property="dotButton" destination="h8q-5h-bnb" id="p5j-eT-wBj"/>
-                        <outlet property="doubleZeroButton" destination="sH6-8l-kje" id="bWG-nO-iWd"/>
-                        <outlet property="eightButton" destination="xgT-2D-A49" id="vVh-ny-6ff"/>
-                        <outlet property="fiveButton" destination="vpW-df-OLm" id="xXT-8Q-fAM"/>
-                        <outlet property="fourButton" destination="hQm-yz-XvG" id="j9x-Gg-Kkx"/>
-                        <outlet property="multiplyButton" destination="811-Pz-An6" id="duo-1g-9Tv"/>
                         <outlet property="nextOperatorLabel" destination="HPC-iy-qdm" id="Cjy-H9-uYN"/>
                         <outlet property="nextValueLabel" destination="Lwz-OF-XHD" id="e7L-GX-Wge"/>
-                        <outlet property="nineButton" destination="zcj-xJ-ruw" id="qsF-qq-2fM"/>
-                        <outlet property="oneButton" destination="nCE-qB-NiN" id="Oxy-UI-gM6"/>
                         <outlet property="opratorLabel" destination="HPC-iy-qdm" id="qDu-m4-sww"/>
-                        <outlet property="sevenButton" destination="L6z-2G-Gar" id="vUg-Ok-jf2"/>
                         <outlet property="signButton" destination="ows-U7-mNc" id="Hhc-sD-fhV"/>
-                        <outlet property="sixButton" destination="OaY-Mw-CPv" id="DWH-tS-i6j"/>
-                        <outlet property="subtractButton" destination="sbh-wC-koF" id="a7i-af-7ud"/>
-                        <outlet property="threeButton" destination="X8H-iH-tSd" id="x11-LI-V8T"/>
-                        <outlet property="twoButton" destination="Rif-2S-UU2" id="tr2-zf-fNe"/>
-                        <outlet property="zeroButton" destination="mSz-Y3-r5Z" id="KM3-D6-4tF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

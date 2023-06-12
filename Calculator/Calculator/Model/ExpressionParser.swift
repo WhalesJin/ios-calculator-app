@@ -21,7 +21,6 @@ enum ExpressionParser {
             .forEach { operators.enqueue($0) }
         
         components
-            .filter { !["+", "-", "/", "*"].contains($0) }
             .compactMap { Double($0) }
             .forEach { operands.enqueue($0)}
         
