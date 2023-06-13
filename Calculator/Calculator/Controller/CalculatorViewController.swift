@@ -91,6 +91,22 @@ class CalculatorViewController: UIViewController {
             return
         }
 
+        if nextValue == "" {
+            nextOperatorLabel.text = `operator`
+            return
+        }
+        
+        calculatingString += " " + nextOperator + " " + nextValue
+        
+        let subStackView = SubStackView(operatorText: nextOperator, valueText: nextValue)
+        
+        self.statusStackView.addArrangedSubview(subStackView)
+        statusScrollView.layoutIfNeeded()
+        goToBottomOfScrollView()
+        
+        nextValueLabel.text = ""
+        touchedNumber = ""
+        
         nextOperatorLabel.text = `operator`
     }
     
