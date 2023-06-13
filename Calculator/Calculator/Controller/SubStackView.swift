@@ -45,8 +45,8 @@ class SubStackView: UIStackView { // 새로운 커스텀 타입
     
     func configureProperty() {
         self.translatesAutoresizingMaskIntoConstraints = false
-        self.axis = .horizontal
-        self.alignment = .fill
+        self.axis = .horizontal // default가 horizontal이어서 생략 가능!!
+        self.alignment = .bottom // 맨 밑에 위치
         self.distribution = .equalSpacing
         self.spacing = 8
     }

@@ -13,10 +13,7 @@ class CalculatorViewController: UIViewController {
     @IBOutlet weak var nextOperatorLabel: UILabel!
     
     @IBOutlet weak var statusStackView: UIStackView!
-    @IBOutlet weak var firstOperatorLabel: UILabel!
-    @IBOutlet weak var secondOperatorLabel: UILabel!
-    @IBOutlet weak var firstNumberLabel: UILabel!
-    @IBOutlet weak var secondNumberLabel: UILabel!
+    @IBOutlet weak var statusScrollView: UIScrollView!
     
     var touchedNumber: String = ""
     var calculatingString: String = ""
@@ -26,22 +23,16 @@ class CalculatorViewController: UIViewController {
         
         nextOperatorLabel.text = ""
         nextValueLabel.text = ""
-        firstOperatorLabel.text = ""
-        firstNumberLabel.text = ""
-        secondOperatorLabel.text = ""
-        secondNumberLabel.text = ""
     }
 
     @IBAction func didTapACButton(_ sender: UIButton) {
         nextOperatorLabel.text = ""
         nextValueLabel.text = ""
-        firstOperatorLabel.text = ""
-        firstNumberLabel.text = ""
-        secondOperatorLabel.text = ""
-        secondNumberLabel.text = ""
-        
-        self.statusStackView.delete(sender)
-    }
+        touchedNumber = ""
+        statusStackView.arrangedSubviews.forEach { $0.removeFromSuperview() }
+        calculatingString = ""
+            
+        }
     
     @IBAction func didTapCEButton(_ sender: UIButton) {
         nextOperatorLabel.text = ""
@@ -70,15 +61,6 @@ class CalculatorViewController: UIViewController {
             return
         }
         
-        calculatingString += " " + nextOperator + " " + nextValue
-        
-        let subStackView = SubStackView(operatorText: nextOperator, valueText: nextValue)
-        
-        self.statusStackView.addArrangedSubview(subStackView)
-        
-        nextValueLabel.text = ""
-        touchedNumber = ""
-        
         guard let `operator` = sender.titleLabel?.text else {
             return
         }
@@ -94,7 +76,6 @@ class CalculatorViewController: UIViewController {
         calculatingString += " " + nextOperator + " " + nextValue
         
         let subStackView = SubStackView(operatorText: nextOperator, valueText: nextValue)
-        
         self.statusStackView.addArrangedSubview(subStackView)
         
         var formula = ExpressionParser.parse(from: calculatingString)
