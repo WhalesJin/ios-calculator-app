@@ -108,8 +108,19 @@ class CalculatorViewController: UIViewController {
         
         var formula = ExpressionParser.parse(from: calculatingString)
         
+        nextValueLabel.text = formatter().string(from: formula.result() as NSNumber)
         nextOperatorLabel.text = ""
         calculatingString = "" // 하나씩 밀리는 오류 해결
+    }
+    
+    func formatter() -> NumberFormatter { // 얘도 커스텀 할 수 있지 않을까
+        let numberFormatter = NumberFormatter()
+        
+        numberFormatter.numberStyle = .decimal // 10진법, 천단위 구분 기호
+        numberFormatter.roundingMode = .halfUp // 반올림
+        numberFormatter.maximumFractionDigits = 20 // 소수점 이하 최대 20
+        
+        return numberFormatter
     }
     
     private func goToBottomOfScrollView() {
