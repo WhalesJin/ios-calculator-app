@@ -22,12 +22,12 @@ class CalculatorViewController: UIViewController {
         super.viewDidLoad()
         
         nextOperatorLabel.text = ""
-        nextValueLabel.text = ""
+        nextValueLabel.text = "0"
     }
 
     @IBAction func didTapACButton(_ sender: UIButton) {
         nextOperatorLabel.text = ""
-        nextValueLabel.text = ""
+        nextValueLabel.text = "0"
         touchedNumber = ""
         statusStackView.arrangedSubviews.forEach { $0.removeFromSuperview() }
         calculatingString = ""
@@ -36,7 +36,7 @@ class CalculatorViewController: UIViewController {
     
     @IBAction func didTapCEButton(_ sender: UIButton) {
         nextOperatorLabel.text = ""
-        nextValueLabel.text = ""
+        nextValueLabel.text = "0"
         touchedNumber = ""
     }
     
@@ -91,7 +91,7 @@ class CalculatorViewController: UIViewController {
             return
         }
 
-        if nextValue == "" {
+        if nextValue == "0" {
             nextOperatorLabel.text = `operator`
             return
         }
@@ -104,7 +104,7 @@ class CalculatorViewController: UIViewController {
         statusScrollView.layoutIfNeeded()
         goToBottomOfScrollView()
         
-        nextValueLabel.text = ""
+        nextValueLabel.text = "0"
         touchedNumber = ""
         
         nextOperatorLabel.text = `operator`
